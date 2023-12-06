@@ -1,0 +1,60 @@
+.card {
+    width: 100%;
+    height: auto;
+    background-color: black;
+    border-bottom: 1px solid #ccc;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Alinea verticalmente los elementos en el centro */
+    align-items: center; /* Alinea horizontalmente los elementos en el centro */
+    text-align: center;
+}
+
+.contain_image {
+    margin-top: 20px;
+    display: flex;
+    max-width: 600px;
+    align-items: center;
+    justify-content: center; /* Centra horizontalmente */
+    padding: 0;
+}
+
+.image{
+    max-width: 70%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.card h2 {
+    font-size: 1.5em;
+    margin: 0;
+    color: white;
+}
+
+.card p {
+    font-size: 1em;
+    margin: 0;
+    color: white;
+}
+
+
+.contain_nav {
+    height: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.boton_nav {
+    width: 40%;
+    margin-left: 30%;
+    display: block; /* Hacer que los elementos Link sean elementos de bloque */
+    text-align: center; /* Centra el texto horizontalmente en los elementos de bloque */
+}
+
+.contain_left_nav{
+    width: 25vw;
+    height: 100vh;
+}
