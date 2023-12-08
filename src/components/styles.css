@@ -1,7 +1,6 @@
 .card {
-    width: 100%;
+    width: 47.25vw;
     height: auto;
-    background-color: black;
     border-bottom: 1px solid #ccc;
     padding: 20px;
     display: flex;
@@ -9,6 +8,7 @@
     justify-content: center; /* Alinea verticalmente los elementos en el centro */
     align-items: center; /* Alinea horizontalmente los elementos en el centro */
     text-align: center;
+
 }
 
 .contain_image {
@@ -38,23 +38,61 @@
     color: white;
 }
 
-
 .contain_nav {
     height: 40px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
-.boton_nav {
-    width: 40%;
-    margin-left: 30%;
-    display: block; /* Hacer que los elementos Link sean elementos de bloque */
-    text-align: center; /* Centra el texto horizontalmente en los elementos de bloque */
+.conteneder_nav{
+    background-color: black;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid white;
+
 }
 
-.contain_left_nav{
+.boton_nav{
+    color: white;
+}
+
+.contain_left_nav {
     width: 25vw;
-    height: 100vh;
+    position: fixed;
+    top: 40px;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.logo{
+    width: 70px;
+    height: auto;
+}
+
+.icon_container{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.home-icon{
+    height: 30px;
+}
+
+.text_inicio{
+    margin-left: 40px;
 }

@@ -1,18 +1,21 @@
 import React from 'react';
 import './styles.css';
-import Img from "next/image";
 
-
-export  default function Cardhome(props) {
+export default function Cardhome({ users }) {
     return (
-        <div className="card">
-            <h2>{props.nombre}</h2>
-            <p>{props.alias}</p>
-            <p>{props.texto}</p>
-            <div className="contain_image">
-                <Img className="image" src={props.image} alt=""/>
-            </div>
-
-        </div>
+        <ul>
+            {users.map((user) => (
+                <li key={user.id}>
+                    <div className="card">
+                        <h2>{user.id}</h2>
+                        <h5>{user.first_name} {user.last_name}</h5>
+                        <p>{user.email}</p>
+                        <div className="contain_image">
+                            <img src={user.avatar} alt={user.email}/>
+                        </div>
+                    </div>
+                </li>
+            ))}
+        </ul>
     );
 }

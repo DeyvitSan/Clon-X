@@ -1,36 +1,55 @@
-'use client';
+'use client'
 import '../style.css';
-import Card from '@/components/Cardhome';
-import imagen from "/public/assets/bugatti.jpg.webp";
-import Img from "next/image";
-import React from 'react';
-import Link from "next/link";
+import Cardhome from '@/components/Cardhome';
+import React, { useEffect, useState } from 'react';
+import Nav from "@/components/Nav";
+import LeftNav from "@/components/LeftNav";
 
+async function fetchUsers() {
+    try {
+        const res = await fetch("http://reqres.in/api/users");
+        const data = await res.json();
+        if (Array.isArray(data.data)) {
+            return data.data;
+        } else {
+            return [data.data];
+        }
+    } catch (error) {
+        console.error("Error fetching users:", error);
+        return [];
+    }
+}
 
 const MiPagina = () => {
-    const totalCards = 2; // Total de tarjetas
+    const [users, setUsers] = useState([]);
 
-    const cardsToShow = Array.from({ length: totalCards }).map((_, index) => (
-        <Card
-            key={index}
-            nombre="John Doe"
-            alias="johnny123"
-            texto="¡Hola, soy John!"
-            image={imagen}
-        />
-    ));
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const fetchedUsers = await fetchUsers();
+                setUsers(fetchedUsers);
+            } catch (error) {
+                console.error("Error fetching users:", error);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     return (
-        <div className="body">
-            <div className="container">
-                <div className="left-div">
-                    Contenido del div izquierdo
-                </div>
-                <div className="right-div">
-                    {cardsToShow}
+        <>
+            <Nav />
+            <div className="body">
+                <div className="container">
+                    <div className="left-div">
+                        <LeftNav />
+                    </div>
+                    <div className="right-div">
+                        <Cardhome users={users} />
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
