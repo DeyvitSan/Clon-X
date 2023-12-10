@@ -1,5 +1,5 @@
 .card {
-    width: 47.25vw;
+    width: 47.3vw;
     height: auto;
     border-bottom: 1px solid #ccc;
     padding: 20px;
@@ -20,10 +20,19 @@
     padding: 0;
 }
 
+.img_card{
+    width: 25vw;
+}
+
 .image{
     max-width: 70%;
     height: auto;
     border-radius: 20px;
+}
+
+.nombre_user{
+    font-size: 1.5em;
+    color: white;
 }
 
 .card h2 {

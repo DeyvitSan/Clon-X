@@ -7,7 +7,7 @@ import LeftNav from "@/components/LeftNav";
 
 async function fetchUsers() {
     try {
-        const res = await fetch("http://reqres.in/api/users");
+        const res = await fetch("https://reqres.in/api/users");
         const data = await res.json();
         if (Array.isArray(data.data)) {
             return data.data;

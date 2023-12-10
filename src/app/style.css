@@ -39,6 +39,9 @@
 .right-div {
     border-right: 1px solid white;
     padding-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
